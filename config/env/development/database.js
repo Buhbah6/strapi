@@ -1,5 +1,5 @@
 const resolveConnectionString = (env) => {
-    const candidates = [env('DATABASE_PUBLIC_URL'), env('DATABASE_URL')];
+    const candidates = [env('DATABASE_URL'), env('DATABASE_PUBLIC_URL')];
 
     for (const candidate of candidates) {
         if (!candidate) {
@@ -14,7 +14,7 @@ const resolveConnectionString = (env) => {
         }
     }
 
-    return env('DATABASE_PUBLIC_URL', env('DATABASE_URL'));
+    return env('DATABASE_URL', env('DATABASE_PUBLIC_URL'));
 };
 
 module.exports = ({ env }) => ({
