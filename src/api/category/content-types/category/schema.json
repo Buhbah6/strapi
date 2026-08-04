@@ -20,6 +20,15 @@
       "targetField": "name",
       "required": true
     },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "article",
+        "tutorial",
+        "video"
+      ]
+    },
     "description": {
       "type": "text",
       "required": false
