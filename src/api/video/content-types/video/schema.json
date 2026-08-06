@@ -30,6 +30,10 @@
         "audios"
       ]
     },
+    "tags": {
+      "type": "json",
+      "required": true
+    },
     "article": {
       "type": "relation",
       "relation": "oneToOne",
