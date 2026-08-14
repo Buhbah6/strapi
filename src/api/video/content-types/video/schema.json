@@ -15,9 +15,19 @@
       "type": "string",
       "required": true
     },
-    "youtubeURL": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "url": {
       "type": "string",
       "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
     },
     "thumbnail": {
       "type": "media",
@@ -30,19 +40,24 @@
         "audios"
       ]
     },
-    "tags": {
-      "type": "json",
+    "description": {
+      "type": "text",
       "required": true
     },
-    "article": {
+    "articles": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article"
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "video"
     },
-    "tutorial": {
+    "tutorials": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::tutorial.tutorial"
+      "relation": "oneToMany",
+      "target": "api::tutorial.tutorial",
+      "mappedBy": "video"
+    },
+    "tags": {
+      "type": "text"
     }
   }
 }
